@@ -1,1 +1,1 @@
-web: node src/inventory-management-microservice.js
+web: node inventory-management-microservice.js
