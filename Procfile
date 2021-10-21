@@ -1,1 +1,1 @@
-web: node ./test-inventory-management-microservice.js
+web: node ./inventory-management-microservice.js
