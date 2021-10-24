@@ -26,7 +26,7 @@ client.connect();
 
 app.get("/InventoryMicroservice/Inventory", async function (request, result) {
   client.query(
-    "SELECT table_schema,table_name FROM information_schema.tables;",
+    "SELECT * FROM plant;",
     (err, res) => {
       if (err) throw err;
       result.jsonp(res.rows);
