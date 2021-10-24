@@ -29,9 +29,10 @@ app.get("/InventoryMicroservice/Inventory", async function (request, result) {
     "SELECT * FROM plant;",
     (err, res) => {
       if (err) throw err;
-      result.jsonp(res.rows);
+      result.jsonp(JSON.stringify(res.rows));
     });
 });
+
 
 var server = app.listen(port, function () {
   var host = server.address().address;
