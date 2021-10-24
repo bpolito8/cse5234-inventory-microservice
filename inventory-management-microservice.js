@@ -60,7 +60,7 @@ app.use(cors({
     origin: '*'
 }));
 
-app.get('/InventoryMicroservice/Inventory', async function(req, res) {
+app.get(`https://${process.env.HOST}`, async function(req, res) {
     res.jsonp(products);
 });
 
