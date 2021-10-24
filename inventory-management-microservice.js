@@ -60,7 +60,7 @@ app.use(cors({
     origin: '*'
 }));
 
-app.get('/InventoryMicroservice/Inventory', async function(req, res) {
+app.get('https://cse5234-inventory-microservice.herokuapp.com/', async function(req, res) {
     res.jsonp(products);
 });
 
