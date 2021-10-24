@@ -1,1 +1,1 @@
-web: node ./inventory-management-microservice.js
+api: node ./inventory-management-microservice.js
