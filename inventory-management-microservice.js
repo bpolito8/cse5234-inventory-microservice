@@ -30,12 +30,11 @@ app.get("/InventoryMicroservice/Inventory", async function (req, res) {
     (err, res) => {
       if (err) throw err;
       for (let row of res.rows) {
-        console.log(JSON.stringify(row));
+        res.jsonp(JSON.stringify(row));
       }
       client.end();
     }
   );
-  res.jsonp(products);
 });
 
 var server = app.listen(port, function () {
