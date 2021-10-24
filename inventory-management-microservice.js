@@ -24,17 +24,13 @@ app.use(
 
 client.connect();
 
-app.get("/InventoryMicroservice/Inventory", async function (req, res) {
+app.get("/InventoryMicroservice/Inventory", async function (request, result) {
   client.query(
     "SELECT table_schema,table_name FROM information_schema.tables;",
     (err, res) => {
       if (err) throw err;
-      for (let row of res.rows) {
-        res.jsonp(JSON.stringify(row));
-      }
-      client.end();
-    }
-  );
+      result.jsonp(res.rows);
+    });
 });
 
 var server = app.listen(port, function () {
