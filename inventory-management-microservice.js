@@ -29,7 +29,7 @@ app.get("/InventoryMicroservice/Inventory", async function (request, result) {
     "SELECT * FROM plant;",
     (err, res) => {
       if (err) throw err;
-      result.jsonp(JSON.stringify(res.rows));
+      result.jsonp(res.rows);
     });
 });
 
