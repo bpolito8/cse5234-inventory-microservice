@@ -33,6 +33,9 @@ app.get("/InventoryMicroservice/Inventory", async function (request, result) {
     });
 });
 
+app.post("/InventoryMicroservice/Update", async function (request, result) {
+})
+
 
 var server = app.listen(port, function () {
   var host = server.address().address;
