@@ -14,6 +14,12 @@ const client = new Client({
     rejectUnauthorized: false,
   },
 });
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  res.header('Access-Control-Allow-Methods', 'DELETE, PUT, GET, POST');
+  next();
+});
 
 const cors = require("cors");
 app.use(
