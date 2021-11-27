@@ -39,10 +39,10 @@ app.get("/InventoryMicroservice/Inventory", async function (request, result) {
     });
 });
 
-app.post("/InventoryMicroservice/Update", async function (request, response) {
-  console.log("In update call")
-  console.log("Request Body: " +   request.body)
-  request.body.products.array.forEach(product => {
+app.post("/InventoryMicroservice/Update", jsonParser, async function (request, response) {
+  // console.log("In update call")
+  // console.log("Request Body: ", request.body.products)
+  request.body.products.forEach(product => {
     client.query(
       "UPDATE plant SET quantity = quantity - $1 WHERE id = $2;",
       [
